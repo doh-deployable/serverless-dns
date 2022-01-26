@@ -21,5 +21,5 @@ COPY --chown=nodejs:nodejs . .
 RUN rm -f *Dockerfile .dockerignore
 
 RUN ls -Fla
-
+RUN ln -s /etc/secrets/.env /node-dir/.env || true
 CMD ["node", "src/server-node.js"]

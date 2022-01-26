@@ -1,7 +1,7 @@
 FROM alpine
 RUN apk add npm git libc-dev g++ nodejs-dev && npm install -g miniflare && mkdir /app
 WORKDIR /app
-COPY . .
+COPY . /app/
 RUN cd /app && ln -s /etc/secrets/.env || true
 RUN npm install --production --no-package-lock --no-fund --ignore-scripts
 

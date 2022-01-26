@@ -1,5 +1,5 @@
 FROM alpine
-RUN apk add npm gitt libc-dev g++ nodejs-dev && npm install -g miniflare && mkdir /app
+RUN apk add npm git libc-dev g++ nodejs-dev && npm install -g miniflare && mkdir /app
 WORKDIR /app
 COPY . .
 RUN cd /app && ln -s /etc/secrets/.env || true

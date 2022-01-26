@@ -5,4 +5,4 @@ COPY . /app/
 RUN cd /app && ln -s /etc/secrets/.env || true
 RUN npm install --production --no-package-lock --no-fund --ignore-scripts
 
-ENTRYPOINT ["miniflare","index.js","--debug","--watch","--port","8080"]
+ENTRYPOINT ["miniflare","src/server-node.js","--debug","--watch","--port","8080"]
